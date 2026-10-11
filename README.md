@@ -17,16 +17,12 @@ SSMS is a management tool. Installing SSMS alone does not install the database e
 
 ## Open the project
 
-Extract the project into a folder on your computer. For this setup, the folder is:
-
-```text
-F:\PROJECT\C#\SkyWay Airline
-```
+Extract the project into a folder on your computer. For this setup,
 
 Open Visual Studio, select **Open a project or solution**, and choose:
 
 ```text
-F:\PROJECT\C#\SkyWay Airline\AirlineReservation.sln
+SkyWay Airline\AirlineReservation.sln
 ```
 
 Solution Explorer should show two projects:
