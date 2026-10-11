@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5278212-4585-4B24-B807-F2BA471B3075}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AirlineReservationDemo</RootNamespace>
+    <AssemblyName>SkyWay.LogicTests</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>7.3</LangVersion>
+    <StartupObject>T</StartupObject>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Tests.cs" />
+    <Compile Include="..\AirlineReservation\Services\AccountService.cs" />
+    <Compile Include="..\AirlineReservation\Data\Db.cs" />
+    <Compile Include="..\AirlineReservation\Data\DbInitializer.cs" />
+    <Compile Include="..\AirlineReservation\Entities\FlightEntity.cs" />
+    <Compile Include="..\AirlineReservation\Entities\FlightInfo.cs" />
+    <Compile Include="..\AirlineReservation\Entities\PassengerEntity.cs" />
+    <Compile Include="..\AirlineReservation\Entities\TicketEntity.cs" />
+    <Compile Include="..\AirlineReservation\Entities\UserEntity.cs" />
+    <Compile Include="..\AirlineReservation\Helpers\Barcode39.cs" />
+    <Compile Include="..\AirlineReservation\Helpers\CsvExporter.cs" />
+    <Compile Include="..\AirlineReservation\Helpers\Money.cs" />
+    <Compile Include="..\AirlineReservation\Helpers\Validator.cs" />
+    <Compile Include="..\AirlineReservation\Services\AuthService.cs" />
+    <Compile Include="..\AirlineReservation\Services\BookingService.cs" />
+    <Compile Include="..\AirlineReservation\Services\PasswordHasher.cs" />
+    <Compile Include="..\AirlineReservation\Services\PaymentService.cs" />
+    <Compile Include="..\AirlineReservation\Services\PricingService.cs" />
+    <Compile Include="..\AirlineReservation\Services\RefundPolicy.cs" />
+    <Compile Include="..\AirlineReservation\Services\ReportService.cs" />
+    <Compile Include="..\AirlineReservation\Services\SeatLayout.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="..\Database\AirlineReservation.sql">
+      <Link>AirlineReservation.sql</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
